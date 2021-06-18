@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 
+// 로딩창 제작
 public class LoadingActivity extends AppCompatActivity {
 
     @Override
