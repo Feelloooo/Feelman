@@ -9,7 +9,7 @@ import android.widget.ViewFlipper;
 public class MainActivity extends AppCompatActivity {
 
     ViewFlipper v_fllipper;
-    //바꾼부분
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
