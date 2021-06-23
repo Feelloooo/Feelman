@@ -15,11 +15,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        int images[] = {
-//                R.drawable.photo1,
-//                R.drawable.photo2,
-//                R.drawable.photo3
-//        };
+        int images[] = {
+                R.drawable.photo1,
+                R.drawable.photo2,
+                R.drawable.photo3
+        };
 
         v_fllipper = findViewById(R.id.image_slide);
 
