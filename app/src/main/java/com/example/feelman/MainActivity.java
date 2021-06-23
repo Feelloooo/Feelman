@@ -16,9 +16,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         int images[] = {
-                R.drawable.photo1,
-                R.drawable.photo2,
-                R.drawable.photo3
+                R.drawable.main_img1,
+                R.drawable.main_img2,
+                R.drawable.main_img3,
+                R.drawable.main_img4
         };
 
         v_fllipper = findViewById(R.id.image_slide);
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         for(int image : images) {
             fllipperImages(image);
         }
-
     }
     public void fllipperImages(int image) {
         ImageView imageView = new ImageView(this);
