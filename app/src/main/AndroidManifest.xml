@@ -1,29 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.feelman">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:usesCleartextTraffic="true"
-        android:networkSecurityConfig="@xml/network_security_config"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Feelman">
-        <activity android:name=".Activity_route"
+        android:theme="@style/Theme.Feelman"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Activity_floor_2"
+            android:parentActivityName=".Activity_floor_info"/>
+        <activity android:name=".Activity_floor_1"
+            android:parentActivityName=".Activity_floor_info"/>
+        <activity android:name=".Activity_floor_info"
             android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".Activity_route"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--카카오맵 -->
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="916c00f88c67a5e2efbac8dd93dfe308"/>
+        </activity> <!-- 카카오맵 -->
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="916c00f88c67a5e2efbac8dd93dfe308" />
     </application>
 
 </manifest>

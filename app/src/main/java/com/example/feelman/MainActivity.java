@@ -44,14 +44,25 @@ public class MainActivity extends AppCompatActivity {
         for(int image : images) {
             fllipperImages(image);
         }
-        Button button1 = findViewById(R.id.menu5); //다른 버튼 사용할 때 변수명 바꿔서 사용
-        button1.setOnClickListener(new View.OnClickListener() {
+        //층별 안내
+        Button button2 = findViewById(R.id.menu2); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_floor_info.class);
+                startActivity(intent);
+            }
+        });
+        //오시는 길
+        Button button5 = findViewById(R.id.menu5); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Activity_route.class);
                 startActivity(intent);
             }
         });
+
     }
     public void fllipperImages(int image) {
         ImageView imageView = new ImageView(this);
