@@ -33,12 +33,12 @@
                 android:layout_height="0dp"
                 android:layout_weight="4" >
                 <Button
+                    android:id="@+id/direction_phone"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/icon_phone"
                     android:layout_marginHorizontal="30dp"
                     android:layout_marginVertical="17dp"
-
                     app:backgroundTint="@color/black"/>
             </LinearLayout>
             <LinearLayout
@@ -63,6 +63,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="4" >
                 <Button
+                    android:id="@+id/direction_car"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/icon_car"
@@ -93,6 +94,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="4" >
                 <Button
+                    android:id="@+id/direction_bus"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/icon_bus"
@@ -122,6 +124,7 @@
                 android:layout_height="0dp"
                 android:layout_weight="4" >
                 <Button
+                    android:id="@+id/direction_walk"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/icon_walk"

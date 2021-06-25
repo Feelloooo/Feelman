@@ -25,6 +25,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //액션바에 충북대학교 로고 추가
+        getSupportActionBar().setIcon(R.drawable.actionbar_logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         //getHashKey();
         int images[] = {
                 R.drawable.main_img1,
