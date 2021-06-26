@@ -26,7 +26,7 @@ public class Activity_floor_info extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("층별 안내");
 
-        Button button1 = findViewById(R.id.first_floor); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        Button button1 = findViewById(R.id.first_floor); //1층 버튼
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,7 +34,7 @@ public class Activity_floor_info extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Button button2 = findViewById(R.id.second_floor); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        Button button2 = findViewById(R.id.second_floor); //2층 버튼
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -34,7 +34,6 @@ public class Activity_floor_2 extends AppCompatActivity {
         mWebSettings.setCacheMode(WebSettings.LOAD_NO_CACHE); // 브라우저 캐시 허용 여부
         mWebSettings.setDomStorageEnabled(true); // 로컬저장소 허용 여부
 
-        // mWebView.loadUrl("https://weather.naver.com/today/16112101"); // 웹뷰에 표시할 웹사이트 주소, 웹뷰 시작
-        mWebView.loadUrl("https://my.matterport.com/show/?m=FmqhAK76MrS");
+        mWebView.loadUrl("https://my.matterport.com/show/?m=FmqhAK76MrS"); //웹뷰 링크 연결
     }
 }
