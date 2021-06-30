@@ -53,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        //기본설명
+        Button button3 = findViewById(R.id.menu3); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_heritage.class);
+                startActivity(intent);
+            }
+        });
         //오시는 길
         Button button5 = findViewById(R.id.menu5); //다른 버튼 사용할 때 변수명 바꿔서 사용
         button5.setOnClickListener(new View.OnClickListener() {
