@@ -8,13 +8,14 @@ import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
-public class DataAdapter {
+public class DataAdapter
+{
     protected static final String TAG = "DataAdapter";
 
     // TODO : TABLE 이름을 명시해야함
-    protected static final String TABLE_NAME = "table_test";
+    protected static final String TABLE_NAME1 = "heritage1";
+    protected static final String TABLE_NAME2 = "heritage2";
 
     private final Context mContext;
     private SQLiteDatabase mDb;
@@ -61,18 +62,18 @@ public class DataAdapter {
         mDbHelper.close();
     }
 
-    public List getTableData()
+    public ArrayList getTableData1()
     {
         try
         {
             // Table 이름 -> antpool_bitcoin 불러오기
-            String sql ="SELECT * FROM " + TABLE_NAME;
+            String sql ="SELECT * FROM " + TABLE_NAME1;
 
             // 모델 넣을 리스트 생성
-            List userList = new ArrayList();
+            ArrayList userList = new ArrayList();
 
             // TODO : 모델 선언
-            User user = null;
+            Heritage heritage = null;
 
             Cursor mCur = mDb.rawQuery(sql, null);
             if (mCur!=null)
@@ -81,16 +82,55 @@ public class DataAdapter {
                 while( mCur.moveToNext() ) {
 
                     // TODO : 커스텀 모델 생성
-                    user = new User();
+                    heritage = new Heritage();
 
                     // TODO : Record 기술
                     // id, name, account, privateKey, secretKey, Comment
-                    user.setName(mCur.getString(0));
-                    user.setAddress(mCur.getString(1));
-
-
+                    heritage.setName(mCur.getString(0));
+                    heritage.setAddress(mCur.getString(1));
+                    heritage.setDescription(mCur.getString(2));
                     // 리스트에 넣기
-                    userList.add(user);
+                    userList.add(heritage);
+                }
+
+            }
+            return userList;
+        }
+        catch (SQLException mSQLException)
+        {
+            Log.e(TAG, "getTestData >>"+ mSQLException.toString());
+            throw mSQLException;
+        }
+    }
+    public ArrayList getTableData2()
+    {
+        try
+        {
+            // Table 이름 -> antpool_bitcoin 불러오기
+            String sql ="SELECT * FROM " + TABLE_NAME2;
+
+            // 모델 넣을 리스트 생성
+            ArrayList userList = new ArrayList();
+
+            // TODO : 모델 선언
+            Heritage heritage = null;
+
+            Cursor mCur = mDb.rawQuery(sql, null);
+            if (mCur!=null)
+            {
+                // 칼럼의 마지막까지
+                while( mCur.moveToNext() ) {
+
+                    // TODO : 커스텀 모델 생성
+                    heritage = new Heritage();
+
+                    // TODO : Record 기술
+                    // id, name, account, privateKey, secretKey, Comment
+                    heritage.setName(mCur.getString(0));
+                    heritage.setAddress(mCur.getString(1));
+                    heritage.setDescription(mCur.getString(2));
+                    // 리스트에 넣기
+                    userList.add(heritage);
                 }
 
             }
