@@ -1,6 +1,9 @@
 package com.example.feelman;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
@@ -65,6 +69,37 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> {
 //                c.startActivity(intent);
 //            }
 //        });
+        holder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onItemClickListener(View view, int position) {
+
+                String gTitle = heritage.get(position).getName();
+                String gEra = heritage.get(position).getEra();
+                String gPlace = heritage.get(position).getPlace();
+                String gDesc = heritage.get(position).getDescription();
+                String gDetail = heritage.get(position).getDetail();
+                BitmapDrawable bitmapDrawable = (BitmapDrawable)holder.mImaeView.getDrawable();
+
+                Bitmap bitmap = bitmapDrawable.getBitmap();
+
+                ByteArrayOutputStream stream = new ByteArrayOutputStream();
+
+                //100Kbytes 까지만 전달 가능
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, stream);
+
+                byte[] bytes = stream.toByteArray();
+
+                Intent intent = new Intent(c, Activity_detail.class);
+                intent.putExtra("iTitle", gTitle);
+                intent.putExtra("iEra",gEra);
+                intent.putExtra("iPlace", gPlace);
+                intent.putExtra("iDesc", gDesc);
+                intent.putExtra("iDetail", gDetail);
+                intent.putExtra("iImage", bytes);
+
+                c.startActivity(intent);
+            }
+        });
     }
 
     @Override

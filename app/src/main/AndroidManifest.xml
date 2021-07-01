@@ -14,9 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Feelman"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Frag_heritage2"></activity>
-        <activity android:name=".Frag_heritage1" />
-        <activity android:name=".Activity_heritage" />
+
+        <activity android:name=".Activity_detail"
+            android:parentActivityName=".Activity_heritage"/>
+        <activity android:name=".Activity_heritage"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Activity_floor_2"
             android:parentActivityName=".Activity_floor_info" />
