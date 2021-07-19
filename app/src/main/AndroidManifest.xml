@@ -55,8 +55,6 @@
         <activity
             android:name=".Activity_route"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".ClassifierActivity"
-            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

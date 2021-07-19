@@ -98,8 +98,8 @@ public class Frag_heritage2 extends Fragment {
         int id = item.getItemId();
         if(id == R.id.action_camera)
         {
-            Intent intent = new Intent(getActivity(), ClassifierActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(getActivity(), ClassifierActivity.class);
+//            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

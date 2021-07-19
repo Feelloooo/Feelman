@@ -3,6 +3,7 @@ package com.example.feelman;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.NinePatch;
 import android.graphics.drawable.BitmapDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -83,6 +84,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyHolder> implements Filtera
                 String gDesc = heritage_filtered.get(position).getDescription();
                 String gDetail = heritage_filtered.get(position).getDetail();
 
+                BitmapDrawable bitmapDrawable = (BitmapDrawable)holder.mImaeView.getDrawable();
                 Bitmap bitmap = bitmapDrawable.getBitmap();
 
                 ByteArrayOutputStream stream = new ByteArrayOutputStream();
