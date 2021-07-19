@@ -46,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //기본설명
-        Button button3 = findViewById(R.id.menu3); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        Button button3 = findViewById(R.id.menu3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Activity_heritage.class);
+                Intent intent = new Intent(getApplicationContext(), Activity_intro.class);
                 startActivity(intent);
             }
         });

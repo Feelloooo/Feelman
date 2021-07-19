@@ -35,6 +35,4 @@ public class Activity_heritage extends AppCompatActivity {
         viewPager.setAdapter(fragmentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
     }
-
-
 }
