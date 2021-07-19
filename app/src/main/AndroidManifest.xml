@@ -3,7 +3,12 @@
     package="com.example.feelman">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
@@ -15,10 +20,13 @@
         android:theme="@style/Theme.Feelman"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Activity_intro_4"
+            android:name=".Activity_intro_2"
             android:parentActivityName=".Activity_intro"></activity>
         <activity
             android:name=".Activity_intro_3"
+            android:parentActivityName=".Activity_intro" />
+        <activity
+            android:name=".Activity_intro_4"
             android:parentActivityName=".Activity_intro" />
         <activity
             android:name=".Activity_intro_5"
@@ -47,6 +55,8 @@
         <activity
             android:name=".Activity_route"
             android:parentActivityName=".MainActivity" />
+        <activity android:name=".ClassifierActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

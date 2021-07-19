@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+import org.tensorflow.lite.examples.classification.tflite.Classifier;
+
 public class MainActivity extends AppCompatActivity {
 
     ViewFlipper v_fllipper;
@@ -51,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Activity_intro.class);
+                startActivity(intent);
+            }
+        });
+        //
+        Button button4 = findViewById(R.id.menu4);
+        button4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ClassifierActivity.class);
                 startActivity(intent);
             }
         });
