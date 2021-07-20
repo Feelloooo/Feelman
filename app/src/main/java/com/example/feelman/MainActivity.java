@@ -70,8 +70,8 @@ public class MainActivity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(MainActivity.this, ClassifierActivity.class);
-//                startActivity(intent);
+                Intent intent = new Intent(MainActivity.this, Activity_program.class);
+                startActivity(intent);
             }
         });
         //오시는 길
