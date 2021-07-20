@@ -38,6 +38,15 @@ public class MainActivity extends AppCompatActivity {
         for(int image : images) {
             fllipperImages(image);
         }
+        //유물 정보
+        Button button1 = findViewById(R.id.menu1); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_heritage.class);
+                startActivity(intent);
+            }
+        });
         //층별 안내
         Button button2 = findViewById(R.id.menu2); //다른 버튼 사용할 때 변수명 바꿔서 사용
         button2.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        //기본설명
+        //박물관 소개
         Button button3 = findViewById(R.id.menu3);
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         imageView.setBackgroundResource(image);
 
         v_fllipper.addView(imageView);      // 이미지 추가
-        v_fllipper.setFlipInterval(2000);       // 자동 이미지 슬라이드 딜레이시간(4000 당 1초)
+        v_fllipper.setFlipInterval(3000);       // 자동 이미지 슬라이드 딜레이시간(4000 당 1초)
         v_fllipper.setAutoStart(true);          // 자동 시작 유무 설정
 
         // animation
