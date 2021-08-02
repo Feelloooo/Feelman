@@ -2,6 +2,9 @@ package com.example.feelman;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +22,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.custom_dialog);
+        dialog.show();
+
+        Button button = (Button) dialog.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
 
         //액션바에 충북대학교 로고 추가
         getSupportActionBar().setIcon(R.drawable.actionbar_logo);
@@ -38,35 +53,36 @@ public class MainActivity extends AppCompatActivity {
         for(int image : images) {
             fllipperImages(image);
         }
-        //유물 정보
+
+        //박물관 소개
         Button button1 = findViewById(R.id.menu1); //다른 버튼 사용할 때 변수명 바꿔서 사용
         button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Activity_heritage.class);
-                startActivity(intent);
-            }
-        });
-        //층별 안내
-        Button button2 = findViewById(R.id.menu2); //다른 버튼 사용할 때 변수명 바꿔서 사용
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), Activity_floor_info.class);
-                startActivity(intent);
-            }
-        });
-        //박물관 소개
-        Button button3 = findViewById(R.id.menu3);
-        button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), Activity_intro.class);
                 startActivity(intent);
             }
         });
-        //
-        Button button4 = findViewById(R.id.menu4);
+        //소장 유물
+        Button button2 = findViewById(R.id.menu2); //다른 버튼 사용할 때 변수명 바꿔서 사용
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_heritage.class);
+                startActivity(intent);
+            }
+        });
+        //온라인 관람
+        Button button3 = findViewById(R.id.menu3);
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), Activity_floor_info.class);
+                startActivity(intent);
+            }
+        });
+        //프로그램 소개개
+       Button button4 = findViewById(R.id.menu4);
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,6 +112,33 @@ public class MainActivity extends AppCompatActivity {
         // animation
         v_fllipper.setInAnimation(this,R.anim.slide_in_right);
         v_fllipper.setOutAnimation(this,R.anim.slide_out_left);
+    }
+
+    @Override
+    public void onBackPressed() {
+        showDialog();
+    }
+
+    void showDialog() {
+        AlertDialog.Builder msgBuilder = new AlertDialog.Builder(MainActivity.this)
+                .setMessage("종료하시겠습니까?")
+                .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+                        MainActivity.super.onBackPressed();
+                    }
+                })
+                .setNegativeButton("취소", new DialogInterface.OnClickListener()
+                {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i)
+                    {
+
+                    }
+                });
+        AlertDialog msgDlg = msgBuilder.create();
+        msgDlg.show();
     }
 
     /*카카오맵 해시키*/
